@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════
+   MaterialCard Styles
+   ═══════════════════════════════════════════ */
+
+.material-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  animation: fadeInUp 0.4s ease backwards;
+}
+
+.material-card:nth-child(1) { animation-delay: 0s; }
+.material-card:nth-child(2) { animation-delay: 0.05s; }
+.material-card:nth-child(3) { animation-delay: 0.1s; }
+.material-card:nth-child(4) { animation-delay: 0.15s; }
+.material-card:nth-child(5) { animation-delay: 0.2s; }
+.material-card:nth-child(6) { animation-delay: 0.25s; }
+
+.material-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--border-accent);
+}
+
+.material-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.material-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--icon-color) 12%, transparent);
+  color: var(--icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.material-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.material-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.material-card__size {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.material-card__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.material-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.material-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.material-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .material-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .material-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+}
